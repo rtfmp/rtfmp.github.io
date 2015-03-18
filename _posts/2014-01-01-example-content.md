@@ -31,7 +31,12 @@ Most of these elements are styled by browsers with few modifications on our part
 
 Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 
+
 ### Code
+
+{% highlight shell %}
+echo "This is Bash"
+{% endhighlight %}
 
 Cum sociis natoque penatibus et magnis dis `code element` montes, nascetur ridiculus mus.
 
