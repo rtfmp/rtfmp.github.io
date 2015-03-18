@@ -34,9 +34,9 @@ Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est 
 
 ### Code
 
-{% highlight shell %}
-echo "This is Bash"
-{% endhighlight %}
+
+`echo "This is Bash"`
+
 
 Cum sociis natoque penatibus et magnis dis `code element` montes, nascetur ridiculus mus.
 
