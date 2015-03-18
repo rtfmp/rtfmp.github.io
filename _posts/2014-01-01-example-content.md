@@ -34,8 +34,7 @@ Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est 
 
 ### Code
 
-
-`echo "This is Bash"`
+    echo "This is Bash"
 
 
 Cum sociis natoque penatibus et magnis dis `code element` montes, nascetur ridiculus mus.
