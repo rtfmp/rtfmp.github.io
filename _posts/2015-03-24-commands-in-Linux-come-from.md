@@ -63,7 +63,7 @@ The Yum equivalent is `yum provides`.
 
 I haven't found an exact equivalent for apt-get but `apt-file search` is close.
 
-Since we have found which package provides the find command which findutils, lets check if this package has other commands or binaries.
+Since we have found which package provides the find command which is findutils, lets check if this package has other commands or binaries.
 
         [rtfmp@centos7 ~]$ rpm -ql findutils | grep bin
         /usr/bin/find
