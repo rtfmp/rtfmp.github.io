@@ -82,7 +82,7 @@ The Debian\Ubuntu way would be
 
 This tells `xargs` comes from the same package as find. I was not aware of this in spite of using Linux for a few good years.
 
-Two packages that would be worth inspecting are `coreutils` and `util-linux` also called `util-linux-ng` in some version. A lot of commands that we use on a daily basis come from these two packages. The following output give us a brief idea of how many binaries are packed with them.
+Two packages that would be worth inspecting are `coreutils` and `util-linux` also called `util-linux-ng` in some version. A lot of commands that we use on a daily basis come from these two packages. The following output gives us a brief idea of how many binaries are packed with them.
 
         [rtfmp@centos7 ~]$ rpm -ql coreutils | grep bin | wc -l
         102
@@ -91,3 +91,5 @@ Two packages that would be worth inspecting are `coreutils` and `util-linux` als
         brm@bacer:~$ dpkg -L coreutils | grep bin | wc -l
         107
         brm@bacer:~$
+
+I hope it's been interesting to you and thank you for reading.
