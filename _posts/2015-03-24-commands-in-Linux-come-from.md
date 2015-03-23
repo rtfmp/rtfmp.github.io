@@ -25,13 +25,69 @@ If it is a shell builtin it tells me so. If it is not, it tells me the path wher
     /usr/lib64/python2.7/modulefinder.py
     ...
 
-Now I know where the command is stored, how do I find from which package it comes from? Use rpm -qf in CentOS 
+Now I know where the command is stored, how do I find from which package it comes from? Use `rpm -qf` in CentOS 
 
     [rtfmp@centos7 ~]$ rpm -qf `which find`
     findutils-4.5.11-3.el7.x86_64
 
-and dpkg -L in Ubuntu.
+and `dpkg -S` in Ubuntu.
 
     brm@bacer:~$ dpkg -S `which find`
     findutils: /usr/bin/find
 
+The Yum equivalent is `yum provides`.
+
+        [rtfmp@centos7 ~]$ yum provides find
+        Loaded plugins: fastestmirror
+        Loading mirror speeds from cached hostfile
+         * base: mirror.nbrc.ac.in
+         * extras: mirror.digistar.vn
+         * updates: mirror.nbrc.ac.in
+        1:findutils-4.5.11-3.el7.x86_64 : The GNU versions of find utilities (find and
+                                        : xargs)
+        Repo        : base
+        Matched from:
+        Filename    : /usr/bin/find
+        
+        
+        
+        1:findutils-4.5.11-3.el7.x86_64 : The GNU versions of find utilities (find and
+                                        : xargs)
+        Repo        : @anaconda
+        Matched from:
+        Filename    : /usr/bin/find
+        
+        
+        
+        [rtfmp@centos7 ~]$
+
+I haven't found an exact equivalent for apt-get but `apt-file search` is close.
+
+Since we have found which package provides the find command which findutils, lets check if this package has other commands or binaries.
+
+        [rtfmp@centos7 ~]$ rpm -ql findutils | grep bin
+        /usr/bin/find
+        /usr/bin/oldfind
+        /usr/bin/xargs
+        [rtfmp@centos7 ~]$
+
+The Debian\Ubuntu way would be
+
+        brm@bacer:~$ dpkg -L findutils | grep bin
+        /usr/bin
+        /usr/bin/oldfind
+        /usr/bin/find
+        /usr/bin/xargs
+        brm@bacer:~$
+
+This tells `xargs` comes from the same package as find. I was not aware of this in spite of using Linux for a few good years.
+
+Two packages that would be worth inspecting are `coreutils` and `util-linux` also called `util-linux-ng` in some version. A lot of commands that we use on a daily basis come from these two packages. The following output give us a brief idea of how many binaries are packed with them.
+
+        [rtfmp@centos7 ~]$ rpm -ql coreutils | grep bin | wc -l
+        102
+        [rtfmp@centos7 ~]$
+
+        brm@bacer:~$ dpkg -L coreutils | grep bin | wc -l
+        107
+        brm@bacer:~$
