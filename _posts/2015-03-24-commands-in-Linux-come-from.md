@@ -25,10 +25,12 @@ If it is a shell builtin it tells me so. If it is not, it tells me the path wher
     /usr/lib64/python2.7/modulefinder.py
     ...
 
-Now I know where the command is stored, how do I find from which package it comes from? Use rpm -qf in CentOS and dpkg -L in Ubuntu.
+Now I know where the command is stored, how do I find from which package it comes from? Use rpm -qf in CentOS 
 
     [rtfmp@centos7 ~]$ rpm -qf `which find`
     findutils-4.5.11-3.el7.x86_64
+
+and dpkg -L in Ubuntu.
 
     brm@bacer:~$ dpkg -S `which find`
     findutils: /usr/bin/find
