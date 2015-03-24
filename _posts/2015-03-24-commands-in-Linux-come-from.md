@@ -2,9 +2,9 @@
 layout: post
 title: Where do commands in Linux come from?
 ---
-When I started learning Linux, I knew there were two types of command-  shell builtin and external executables. Shell builtin are built into the shell and executables are binaries that are independent of the shell. But I never really thought for long time where do the commands come from. 
+When I started learning Linux, I knew there were two types of command-  shell builtin and external executables. Shell builtin are built into the shell and executables are binaries that are independent of the shell. But I never really thought for a long time where do the commands come from. 
 
-Some commands come from their own package whereas in some cases a single package would pack a bunch of commands. First to find out the type of command, I would use the `type` command. 
+Some commands come from their own package whereas in some cases a single package would pack a bunch of commands. To find the type of a command, I use the `type` command. 
 
     [rtfmp@centos7 ~]$ type cd
     cd is a shell builtin
@@ -71,6 +71,8 @@ Since we have found which package provides the find command which is findutils, 
         /usr/bin/xargs
         [rtfmp@centos7 ~]$
 
+This tells `xargs` comes from the same package as find. I was not aware of this in spite of using Linux for a few good years.
+
 The Debian\Ubuntu way would be
 
         brm@bacer:~$ dpkg -L findutils | grep bin
@@ -79,8 +81,6 @@ The Debian\Ubuntu way would be
         /usr/bin/find
         /usr/bin/xargs
         brm@bacer:~$
-
-This tells `xargs` comes from the same package as find. I was not aware of this in spite of using Linux for a few good years.
 
 Two packages that would be worth inspecting are `coreutils` and `util-linux` also called `util-linux-ng` in some version. A lot of commands that we use on a daily basis come from these two packages. The following output gives us a brief idea of how many binaries are packed with them.
 
