@@ -1,8 +1,14 @@
 ---
 layout: post
 title: Changing hostname in RHEL 7
-published: false
+published: true
 ---
+- [Using the hostname command](#)
+- [Editing  /etc/hostname](#)
+- [Using hostnamectl command](#)
+- [Using nmcli](#)
+- [Using nmtui](#)
+
 We are going to see the different ways of displaying and setting the hostname in RHEL 7. We will use commands like hostname, nmtui, nmcli and hostnamectl. Except for hostname command, all other methods survive a reboot.
 
 ##Using the hostname command
