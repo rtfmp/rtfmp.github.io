@@ -49,7 +49,7 @@ Verify
     
 ##Using hostnamectl command<a id="hostnamectl"></a>
 
-To displaying the hostname, run `hostnamectl` or `hostnamectl status`
+To display the hostname, run `hostnamectl` or `hostnamectl status`
 
     [rtfmp@centos7 ~]$ hostnamectl
        Static hostname: centos7.localdomain
