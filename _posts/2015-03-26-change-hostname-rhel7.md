@@ -3,9 +3,15 @@ layout: post
 title: Changing hostname in RHEL 7
 published: true
 ---
+- [Using the hostname command](#hostname)
+- [Editing  /etc/hostname](#etc_hostname)
+- [Using hostnamectl command](#hostnamectl)
+- [Using nmcli](#nmcli)
+- [Using nmtui](#nmtui)
+
 We are going to see the different ways of displaying and setting the hostname in RHEL 7. We will use commands like hostname, nmtui, nmcli and hostnamectl. Except for hostname command, all other methods survive a reboot.
 
-##Using the hostname command
+##Using the hostname command<a id="hostname"></a>
 Display the hostname
 
     [rtfmp@centos7 ~]$ hostname
@@ -38,7 +44,7 @@ This will not survive a reboot as the change is not written to the configuration
     [rtfmp@aizawl ~]$
 
 
-##Editing  /etc/hostname
+##Editing  /etc/hostname<a id="etc_hostname"></a>
 
 RHEL 7 has three hostnames. One of them, the static hostname is stored in  `/etc/hostname` and this is what we normally refer to as "the hostname". 
 
@@ -99,7 +105,7 @@ In RHEL 7 comes a new command hostnamectl from Systemd. hostnametcl will not not
           Architecture: x86_64
     [rtfmp@centos7 ~]$
 
-##Using hostnamectl command
+##Using hostnamectl command<a id="hostnamectl"></a>
 
 To displaying the hostname, run `hostnamectl` or `hostnamectl status`
 
@@ -155,7 +161,7 @@ It is immmediately reflected in `hostname`, `/etc/hostname` and `hostnamectl` ou
           Architecture: x86_64
     [rtfmp@aizawl ~]$
 
-##Using nmcli
+##Using nmcli<a id="nmcli"></a>
 Displaying the hostname
 
     [rtfmp@aizawl ~]$ nmcli general hostname
@@ -175,7 +181,7 @@ Check the change is succcessfull
 aizawl
 [rtfmp@aizawl ~]$
 
-##Using nmtui
+##Using nmtui<a id="nmtui"></a>
 
 nmtui is a text based graphical tool. Simply run `nmtui` from the terminal as root or via sudo and choose `set system hostname`. Next restart hostnamed.
 
