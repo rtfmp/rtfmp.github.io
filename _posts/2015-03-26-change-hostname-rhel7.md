@@ -133,8 +133,8 @@ To displaying the hostname, run `hostnamectl` or `hostnamectl status`
 
 Now let us change the hostname 
 
-[rtfmp@aizawl ~]$ sudo hostnamectl set-hostname centos7
-[sudo] password for rtfmp:
+    [rtfmp@aizawl ~]$ sudo hostnamectl set-hostname centos7
+
 
 It is immmediately reflected in `hostname`, `/etc/hostname` and `hostnamectl` output
 
