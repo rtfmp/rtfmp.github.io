@@ -38,7 +38,7 @@ Yes, the `/etc/sysconfig/network` file is not in use anymore.
 
 Change the hostname
 
-    [rtfmp@centos7 ~]$sudo vi  /etc/hostname
+    [rtfmp@centos7 ~]$ sudo vi  /etc/hostname
     [rtfmp@centos7 ~]$ sudo systemctl restart systemd-hostnamed
     
 Remember to enter the FQDN.
@@ -86,7 +86,7 @@ Verify
     [rtfmp@centos7 ~]$ hostname
 
 ##Using nmtui<a id="nmtui"></a>
-nmtui is a text based graphical tool. Simply run `nmtui` from the terminal as root or via sudo and choose `set system hostname`. Next restart hostnamed.
+nmtui is a text based graphical tool. Simply run `nmtui` from the terminal as root or via sudo and choose `set system hostname` and restart hostnamed.
 
     [rtfmp@centos7 ~]$ nmtui
     [rtfmp@centos7 ~]$ sudo systemctl restart systemd-hostnamed
