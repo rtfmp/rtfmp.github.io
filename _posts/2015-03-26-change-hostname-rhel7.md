@@ -9,7 +9,7 @@ published: true
 - [Using nmcli](#nmcli)
 - [Using nmtui](#nmtui)
 
-We are going to see the different ways of displaying and setting the hostname in RHEL 7. We will use commands like hostname, nmtui, nmcli, hostnamectl. Except for hostname command, all other methods survive a reboot. To make hostnamectl aware of the change by other commands, hostnamed we will restart hostnamed. hostnamectl is a part of systemd.  
+We are going to see the different ways of displaying and setting hostname in RHEL 7. We will use commands like hostname, nmtui, nmcli, hostnamectl. Except for hostname command, all other methods will survive a reboot. To make hostnamectl aware of the change by other commands, we will restart hostnamed. hostnamectl is a part of systemd.  
 
 ##Using the hostname command<a id="hostname"></a>
 Display the hostname
