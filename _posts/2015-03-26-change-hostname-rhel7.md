@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Changing hostname in RHEL 7
+published: false
 ---
 We are going to see the different ways of displaying and setting the hostname in RHEL 7. We will use commands like hostname, nmtui, nmcli and hostnamectl. Except for hostname command, all other methods survive a reboot.
 
@@ -176,6 +177,6 @@ aizawl
 
 ##Using nmtui
 
-nmtui is a text based graphical too. Simply run `nmtui` from the terminal as root or via sudo and choose `set system hostname`. Next restart hostnamed.
+nmtui is a text based graphical tool. Simply run `nmtui` from the terminal as root or via sudo and choose `set system hostname`. Next restart hostnamed.
 
     [rtfmp@aizawl ~]$ sudo systemctl restart systemd-hostnamed
