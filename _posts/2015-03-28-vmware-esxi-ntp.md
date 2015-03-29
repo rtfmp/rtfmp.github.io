@@ -25,14 +25,15 @@ This is a freshly installed server and there's no ntp server configured.
 
 ## Configure NTP server<a id="vintp.conf"></a>
 We will use NTP Pool Project servers.
-    ~ # vi /etc/ntp.conf
-    ~ # cat /etc/ntp.conf
-    restrict 127.0.0.1
-    restrict default kod nomodify notrap
-    server 0.pool.ntp.org
-    server 1.pool.ntp.org
-    driftfile /etc/ntp.drift
-    ~ #
+
+        ~ # vi /etc/ntp.conf
+        ~ # cat /etc/ntp.conf
+        restrict 127.0.0.1
+        restrict default kod nomodify notrap
+        server 0.pool.ntp.org
+        server 1.pool.ntp.org
+        driftfile /etc/ntp.drift
+        ~ #
 
 ## Restart NTP<a id="ntpdrestart"></a>
     ~ # /etc/init.d/ntpd restart
@@ -75,4 +76,15 @@ We will use NTP Pool Project servers.
 
 
 ## Run the commands over ssh<a id="runssh"></a>
+        ssh root@servername command_to_run
+    
 ## Repeat the commands for multiple hosts over ssh <a id="runmult"></a>
+        cat > server_list
+        Paste the list of servers
+        Ctrl+D
+        
+        for i in `cat server_list`
+        do
+        ssh root@$i  command_to_run
+        done
+
