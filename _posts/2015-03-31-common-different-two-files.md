@@ -59,4 +59,4 @@ Sample output:
     host10
     [rtfmp@centos7 ~]$
 
-This filters all lines that are in file1 but not in file2.
+This filters all lines that are in file1 but not in file2. Switch the file names to do the opposite.
