@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Configure NTP in ESXi from the command line
-published: false
 ---
 
 - [Display NTP settings](#catntp.conf)
 - [Configure NTP server](#vintp.conf)
 - [Restart NTP](#ntpdrestart)
+- [Enable NTP Service](#chkconfntp)
 - [Display NTP peers](#ntpq-p)
 - [Replace NTP server](#replacentpdserver)
 - [Remove NTP server](#removentp)
@@ -48,6 +48,24 @@ We will use NTP Pool Project servers.
      ns02.hns.net.in .INIT.          16 u    -   64    0    0.000    0.000   0.000
      123.108.200.124 .INIT.          16 u    -   64    0    0.000    0.000   0.000
     ~ #
+
+It could take sometime to sync.
+
+        ~ # ntpq -p
+             remote           refid      st t when poll reach   delay   offset  jitter
+        ==============================================================================
+        +123.108.200.124 103.252.195.20   3 u   46   64  377   81.459    4.968   3.615
+        *web10.hnshostin 158.43.128.33    2 u   44   64  377   38.879    5.120   5.157
+        ~ #
+
+
+##Enable NTP service
+
+        ~ # chkconfig ntpd on
+        ~ # chkconfig --list | grep ntpd
+        ntpd                            on
+        ~ #
+
 
 ## Replace NTP server<a id="replacentpdserver"></a>
     sed -i 's/ntpserver/newntpserver/' /etc/ntp.conf
