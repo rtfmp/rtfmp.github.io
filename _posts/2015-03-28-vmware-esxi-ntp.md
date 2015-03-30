@@ -6,7 +6,7 @@ title: Configure NTP in ESXi from the command line
 - [Display NTP settings](#catntp.conf)
 - [Configure NTP server](#vintp.conf)
 - [Restart NTP](#ntpdrestart)
-- [Enable NTP Service](#chkconfntp)
+- [Enable NTP Service](#chkconfigntp)
 - [Display NTP peers](#ntpq-p)
 - [Replace NTP server](#replacentpdserver)
 - [Remove NTP server](#removentp)
@@ -59,7 +59,7 @@ It could take sometime to sync.
         ~ #
 
 
-##Enable NTP service
+##Enable NTP service<a id="chkconfigntp"></a>
 
         ~ # chkconfig ntpd on
         ~ # chkconfig --list | grep ntpd
