@@ -30,7 +30,7 @@ A co-worker was working on patching. He had two files containing a list of hostn
     host7
     [rtfmp@centos7 ~]$
 
-Another co-worker was working on something and he needed the opposite. Print all lines that  is not common between files. I gave him this:
+Another co-worker was working on something else and he needed the opposite. Print all lines that  is not common between files. I gave him this:
 
     for i in `cat file1`
     do
