@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Changing hostname in RHEL 7
+title: Configure hostname in RHEL 7
 published: true
 ---
 - [Using the hostname command](#hostname)
