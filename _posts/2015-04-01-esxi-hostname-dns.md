@@ -1,3 +1,8 @@
+---
+layout: post
+title:  Configure hostname in VMware ESXi
+---
+
 - [Set hostname only](#sethostname)
 - [Set domain](#setdomain)
 - [Set Fully Qualified Domain Name in one shot](#setfqdn)
