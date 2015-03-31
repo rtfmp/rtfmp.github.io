@@ -94,7 +94,7 @@ It could take sometime to sync.
 
 
 ## Run the commands over ssh<a id="runssh"></a>
-        ssh root@servername command_to_run
+        ssh root@servername "command_to_run"
     
 ## Repeat the commands for multiple hosts over ssh <a id="runmult"></a>
         cat > server_list
@@ -103,6 +103,6 @@ It could take sometime to sync.
         
         for i in `cat server_list`
         do
-        ssh root@$i  command_to_run
+        ssh root@$i  "command_to_run"
         done
 
