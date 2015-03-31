@@ -1,5 +1,9 @@
-##Set hostname only
+- [Set hostname only](#sethostname)
+- [Set domain](#setdomain)
+- [Set Fully Qualified Domain Name in one shot](#setfqdn)
+- [Display hostnamem using esxcli command](#esxclihostname)
 
+##Set hostname only<a id="sethostname"></a>
     ~ # esxcli system hostname set   --host farstar
     ~ # hostname
     farstar.localdomain
@@ -10,8 +14,7 @@
     farstar.localdomain
     ~ #
 
-
-##Set domain
+##Set domain<a id="setdomain"></a>
     ~ # esxcli system hostname set   --domain farstar.rtfmp.com
     ~ # hostname
     farstar.farstar.rtfmp.com
@@ -22,7 +25,7 @@
     farstar.rtfmp.com
     ~ #
 
-##Set Fully Qualified Domain Name in one shot
+##Set Fully Qualified Domain Name in one shot<a id="setfqdn"></a>
     ~ # esxcli system hostname set --fqdn farstar.rtfmp.com
     ~ # hostname
     farstar.rtfmp.com
@@ -30,7 +33,7 @@
     OR
     ~ # esxcli system hostname set -f farstar.rtfmp.com
 
-##Display hostnamem using esxcli command
+##Display hostname using esxcli<a id="esxclihostname"></a>
     ~ # esxcli system hostname get
        Domain Name: rtfmp.com
        Fully Qualified Domain Name: farstar.rtfmp.com
