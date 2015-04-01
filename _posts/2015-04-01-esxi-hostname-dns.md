@@ -6,7 +6,7 @@ title:  Configure hostname in VMware ESXi
 - [Set hostname only](#sethostname)
 - [Set domain](#setdomain)
 - [Set Fully Qualified Domain Name in one shot](#setfqdn)
-- [Display hostnamem using esxcli command](#esxclihostname)
+- [Display hostname using esxcli command](#esxclihostname)
 
 ##Set hostname only<a id="sethostname"></a>
     ~ # esxcli system hostname set   --host farstar
