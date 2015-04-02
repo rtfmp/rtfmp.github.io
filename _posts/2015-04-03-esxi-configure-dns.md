@@ -1,3 +1,8 @@
+---
+layout: post
+title: Configure DNS in ESXi
+---
+
 - [List DNS servers](#list)
 - [Add DNS server](#add)
 - [Remove DNS server](#remove)
