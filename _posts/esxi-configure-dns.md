@@ -1,7 +1,9 @@
 - [List DNS servers](#list)
 - [Add DNS server](#add)
 - [Remove DNS server](#remove)
-- [Add DNS search list](#search)
+- [List DNS search list](#listsearch)
+- [Add DNS search list](#addsearch)
+- [Remove DNS search list](#removesearch)
  
 
 ##List DNS servers<a id="list"></a>
@@ -22,8 +24,21 @@
        DNSServers: 192.168.76.2
     ~ #
 
-##Add DNS search list<a id="search"></a>
+##List DNS search list<a id="listsearch"></a>
+  ~ # esxcli network ip dns search list
+     DNSSearch Domains: localdomain
+  ~ #
+
+##Add DNS search list<a id="addsearch"></a>
     ~ # esxcli network ip dns search add -d intra.rtfmp.com
     ~ # esxcli network ip dns search list
        DNSSearch Domains: localdomain, intra.rtfmp.com
     ~ #
+
+##Remove DNS search list<a id="removesearch"></a>
+
+  ~ # esxcli network ip dns search remove -d intra.rtfmp.com
+  ~ # esxcli network ip dns search list
+     DNSSearch Domains: localdomain
+  ~ #
+
