@@ -25,20 +25,18 @@
     ~ #
 
 ##List DNS search list<a id="listsearch"></a>
-  ~ # esxcli network ip dns search list
+    ~ # esxcli network ip dns search list
      DNSSearch Domains: localdomain
-  ~ #
+     ~ #
 
 ##Add DNS search list<a id="addsearch"></a>
     ~ # esxcli network ip dns search add -d intra.rtfmp.com
     ~ # esxcli network ip dns search list
-       DNSSearch Domains: localdomain, intra.rtfmp.com
+    DNSSearch Domains: localdomain, intra.rtfmp.com
     ~ #
 
 ##Remove DNS search list<a id="removesearch"></a>
-
-  ~ # esxcli network ip dns search remove -d intra.rtfmp.com
-  ~ # esxcli network ip dns search list
-     DNSSearch Domains: localdomain
-  ~ #
-
+    ~ # esxcli network ip dns search add -d intra.rtfmp.com
+    ~ # esxcli network ip dns search list
+    DNSSearch Domains: localdomain, intra.rtfmp.com
+    ~ #
