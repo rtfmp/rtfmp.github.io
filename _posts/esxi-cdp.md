@@ -1,12 +1,76 @@
-When I am given an ESXi host to build and configure, it is not always clear which vmnic is connected to which ports on the physical switch nor which vmnic should be used for what purpose. When I am in this situation, I turn to CDP information. It does not always give a definite answer but it helps me ask the right question to the Network Admin.
+When I am given an ESXi host to build and configure, it is not always clear which vmnic is connected to which port on the physical switch nor which vmnic should be used for what purpose. When I am in this situation, I turn to CDP information. It does not always give a definite answer but it helps me ask the right question to the Network Admin.
 
-There are different ways to view CDP information in ESXi. VMware has a nice article here. My favorite way is to use this command
+There are [different ways](http://kb.vmware.com/kb/1007069) to view CDP information in ESXi. My favorite way is to use this command
 
-    # vim-cmd hostsvc/net/query_networkhint --pnic-name=vmnic[xx
+    # vim-cmd hostsvc/net/query_networkhint --pnic-name=vmnic[xx]
     
-
 Sample Output
 
-Access Port
+        ~ # vim-cmd hostsvc/net/query_networkhint --pnic-name=vmnic1
+        (vim.host.PhysicalNic.NetworkHint) [
+           (vim.host.PhysicalNic.NetworkHint) {
+              dynamicType = <unset>,
+              device = "vmnic1",
+              subnet = (vim.host.PhysicalNic.NetworkHint.IpNetwork) [
+                 (vim.host.PhysicalNic.NetworkHint.IpNetwork) {
+                    dynamicType = <unset>,
+                    vlanId = 0,
+                    ipSubnet = "192.168.1.1-192.168.1.255",
+                 }
+              ],
+              connectedSwitchPort = (vim.host.PhysicalNic.CdpInfo) {
+                 dynamicType = <unset>,
+                 cdpVersion = 2,
+                 timeout = 0,
+                 ttl = 155,
+                 samples = 12908,
+                 devId = "switch1.net.rtfmp.com",
+                 address = "192.168.11.1",
+                 portId = "GigabitEthernet1/0/10",
+                 deviceCapability = (vim.host.PhysicalNic.CdpDeviceCapability) {
+                    dynamicType = <unset>,
+                    router = false,
+                    transparentBridge = false,
+                    sourceRouteBridge = false,
+                    networkSwitch = true,
+                    host = false,
+                    igmpEnabled = true,
+                    repeater = false,
+                 },
+                 softwareVersion = "unknown",
+                 hardwarePlatform = "cisco WS-C3750G-24TS-1U",
+                 ipPrefix = "0.0.0.0",
+                 ipPrefixLen = 0,
+                 vlan = 10,
+                 fullDuplex = true,
+                 mtu = 0,
+                 systemName = "",
+                 systemOID = "",
+                 mgmtAddr = "192.168.11.1",
+                 location = "",
+              },
+              lldpInfo = (vim.host.PhysicalNic.LldpInfo) null,
+           }
+        ]
 
-Trunk Port
+
+The output tells vmnic1 is connected to this switch and  port
+
+        devId = "switch1.net.rtfmp.com",
+        portId = "GigabitEthernet1/0/10",
+
+I can now give this information to the Network Admin and ask for what VLAN, for what IP subnet this port is configured.
+
+If the vmnic is configured for a single VLAN, most likely it will be connected to a port in access mode. When a vmnic is connected to a port in access mode, this is how I see it
+
+            vlanId = 0,
+            ipSubnet = "192.168.1.1-192.168.1.255",
+
+Notice the VLAN ID is 0 but this isn't real VLAN ID. 
+
+If the vmnic is meant for multiple VLANs, it will be connected to a trunk port and this is how it looks like.
+
+            vlanId = 10,
+            ipSubnet = "192.168.1.1-192.168.1.255",
+
+This also means I will need add VLAN ID to my portgroup in ESXi. 
