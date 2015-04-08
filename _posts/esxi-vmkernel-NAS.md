@@ -1,4 +1,4 @@
-I have two VMkernel interaces in my ESXi server and I use NAS datastores. I would like to know which of my vmk interfaces is used for NAS. Sure, I can ask the NAS Admin. Hey, here's a volume on this filer, can you give me the list of IPs it is exported to? I am a Linux admin and I would like to run some commands and I find it myself.
+I have two VMkernel interfaces in my ESXi server and I use NAS datastores. I would like to know which of my vmk interfaces is used for NAS. Sure, I can ask the NAS Admin. Hey, here's a volume on this filer, can you give me the list of IPs it is exported to? I am a Linux admin and I would like to run some commands and I find it myself.
 
 List the VMKernel interfaces
 
