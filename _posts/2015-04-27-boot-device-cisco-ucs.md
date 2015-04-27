@@ -20,7 +20,7 @@ I am going to install ESXi on a bunch of UCS C Series rack mount servers. They a
     commit
     exit
 
-The CIMC command line is a no brainer if you have the love for command line and a minimal experience on IOS.  To do anything BIOS related- show or set, you enter the BIOS scope which I did in the first line using the command `scope bios`. I create the `create-boot-device` to create boot devices. Next, I entered into each device to do further settings. And to make change persistent, I run the `commit` command. 
+The CIMC command line is a no brainer if you have the love for command line and a minimal experience on IOS.  To do anything BIOS related- show or set, you enter the BIOS scope which I did in the first line using the command `scope bios`. I use  `create-boot-device` to create boot devices. Next, I enter into each device scope to do further settings. And to make change persistent, I run the `commit` command. 
 
 Here I  display the  boot order settings that were created
 
@@ -31,4 +31,3 @@ Here I  display the  boot order settings that were created
     Hypervisor                     SDCARD       Enabled            2
     C220-xxxxxxxxxxx /bios #
     
-
