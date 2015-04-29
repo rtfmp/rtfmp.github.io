@@ -6,7 +6,8 @@ published: false
 Off late, a couple of friends are asking me how I check if I can connect to a port on a remote host. They have  tried telnet-ing to the port but it does not work because they are UDP ports. After a bit of googling and reading the man page, this is how I scan UDP ports using nc and nmap.
 
 Using nc:
-    nc -uz remote-host udp-port
+
+      nc -uz remote-host udp-port
 
 Sample out:
 
