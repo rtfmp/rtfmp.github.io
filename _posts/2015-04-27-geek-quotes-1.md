@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Geek Quotes #1
-publish: false
+published: false
 ---
 
 "....I remember a friend of mine telling me that he was drilling holes in the handle of his toothbrush before leaving for a long hiking trip, in order to reduce as much as possible the weight to carry."
