@@ -24,7 +24,7 @@ Sample output:
 
       [root@server1 ~]# nmap -sU -p514 remote_host
             
-      Starting Nmap 4.11 ( http://www.insecure.org/nmap/ ) at 2015-05-11 09:00 IST
+      Starting Nmap 4.11 ( http://www.insecure.org/nmap/ ) at 2015-05-11 09:00
       Interesting ports on remote_host (IP_ADDRESS):
       PORT    STATE         SERVICE
       514/udp open|filtered syslog
