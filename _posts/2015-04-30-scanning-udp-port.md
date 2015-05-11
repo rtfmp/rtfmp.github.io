@@ -17,7 +17,8 @@ Sample output:
 If the remote host is not accepting the connection, it instantly returns the prompt without any message or takes a while sometimes.
 
 Using nmap:
-    nmap -sU -pPortNumer  remote-host
+
+     nmap -sU -pPortNumer  remote-host
 
 Sample output:
 
