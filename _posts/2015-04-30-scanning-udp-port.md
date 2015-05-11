@@ -22,12 +22,12 @@ Using nmap:
 
 Sample output:
 
-            [root@server1 ~]# nmap -sU -p514 remote_host
+      [root@server1 ~]# nmap -sU -p514 remote_host
             
-            Starting Nmap 4.11 ( http://www.insecure.org/nmap/ ) at 2015-05-11 09:00 IST
-            Interesting ports on remote_host (IP_ADDRESS):
-            PORT    STATE         SERVICE
-            514/udp open|filtered syslog
+      Starting Nmap 4.11 ( http://www.insecure.org/nmap/ ) at 2015-05-11 09:00 IST
+      Interesting ports on remote_host (IP_ADDRESS):
+      PORT    STATE         SERVICE
+      514/udp open|filtered syslog
             
-            Nmap finished: 1 IP address (1 host up) scanned in 0.398 seconds
+      Nmap finished: 1 IP address (1 host up) scanned in 0.398 seconds
 
