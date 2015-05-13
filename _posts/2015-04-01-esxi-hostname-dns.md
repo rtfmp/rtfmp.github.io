@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Configure hostname in VMware ESXi
+comments: true
 ---
 
 - [Set hostname only](#sethostname)
