@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Geek Quotes #1
+comments: true
 published: false
 ---
 
