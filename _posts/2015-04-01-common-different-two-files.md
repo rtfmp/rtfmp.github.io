@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Find the common and different lines between two files
+comments: true
 ---
 
 A co-worker was working on patching. He had two files containing a list of hostnames. He wanted to filter out hosts appearing in both files. I gave him a few lines of for loop and grep which did the job. A little later he discovered he could use `-f` parameter in `grep`. 
