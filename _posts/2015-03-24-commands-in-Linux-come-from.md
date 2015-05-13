@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Where do commands in Linux come from?
+comments: true
 ---
 When I started learning Linux, I knew there were two types of command-  shell builtin and external executables. Shell builtin are built into the shell and executables are binaries that are independent of the shell. But I never really thought for a long time where do the commands come from. 
 
