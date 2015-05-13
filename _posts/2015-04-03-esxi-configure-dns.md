@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Configure DNS in ESXi
+comments: true
 ---
 
 - [List DNS servers](#list)
