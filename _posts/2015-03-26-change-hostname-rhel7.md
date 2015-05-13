@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Configure hostname in RHEL 7
-published: true
+comments: true
 ---
 - [Using the hostname command](#hostname)
 - [Editing  /etc/hostname](#etc_hostname)
