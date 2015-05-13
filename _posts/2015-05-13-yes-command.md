@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The yes command and a bit of its history
+comments: true
 ---
 
 The yes command prints it's argument repeatedly until killed. If no argument is given, it will print y until killed.
