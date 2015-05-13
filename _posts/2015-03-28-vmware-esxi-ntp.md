@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Configure NTP in ESXi from the command line
+comments: true
 ---
 
 - [Display NTP settings](#catntp.conf)
