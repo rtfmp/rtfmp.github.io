@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How do I scan UDP ports?
+comments: true
 ---
 Off late, a couple of friends are asking me how to check if we can connect to a port on a remote host. They have  tried telnet-ing to the port but it does not work because they are UDP ports. After a bit of googling and reading the man page, this is how we can scan UDP ports using nc and nmap.
 
