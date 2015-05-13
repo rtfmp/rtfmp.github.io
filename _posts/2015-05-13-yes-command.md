@@ -46,4 +46,4 @@ The C code of yes command from [2.9BSD](http://minnie.tuhs.org/cgi-bin/utree.pl?
     		printf("%s\n", argc>1? argv[1]: "y");
     }
     
-A printf function in an infinite for loop that prints "y" if not command line argunment is give. However, the current GNU implemenation is little more complex than this, see the source code [here]((http://nickm.com/trope_tank/TROPE-12-01.pdf)).
+A printf function in an infinite for loop that prints "y" if no command line argument is given. However, the current GNU implemenation is little more complex than this, see the source code [here]((http://nickm.com/trope_tank/TROPE-12-01.pdf)).
