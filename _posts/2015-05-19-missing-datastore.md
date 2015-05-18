@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Dude, where's my datastore?
+title: Dude, where's my VMFS datastore?
 ---
-Consider these situation. Suddenly, a VM goes down and the datastore on which it sits is greyed out in vCenter. A virtual machine is unable access one of it's disks. You are unable to browse the datastore because it is greyed out. The VMFS datastore is inaccessible across hosts in the cluster.
+Consider these situations. Suddenly, a VM goes down and the datastore on which it sits is greyed out in vCenter. A virtual machine is unable access one of it's disks. You are unable to browse the datastore because it is greyed out. The VMFS datastore is inaccessible across hosts in the cluster.
 
 What can we do? The first thing we need to check is, can the host access the VMFS datastore? Most likely not because we can't browser it from vSphere client GUI. To be certain, we can check it from the command line. ssh to the ESXi host and run one of these commands
 
@@ -16,6 +16,8 @@ If there is no output, the datastore isn't there. The next question is, does the
     esxcfg-mpath  -l | grep -i naa.ID
     esxcli storage nmp device list | grep -i  naa.ID
 
+If it is important to have grep ignore case because the SAN guy gave NAA ID with upper case letters whereas ESXi detects them with lower case. I lost close to an hour because I was unaware of this.
+
 If you don't see the LUN, we need to talk to the SAN admin. But if we do see the LUN, what happens to the datastore? Maybe there isn't a valid VMFS partition on the LUN. To check that run
 
     fdisk -l /vmfs/devices/disks/naa.ID or 
@@ -23,7 +25,7 @@ If you don't see the LUN, we need to talk to the SAN admin. But if we do see the
 
 This awesome [script](http://kb.vmware.com/kb/2046610) from VMware will print out the partition information for SAN LUNs.
 
-```bash
+```
 offset="128 2048"; for dev in `esxcfg-scsidevs -l | grep "Console Device:" | awk {'print $3'}`; do disk=$dev; echo $disk; partedUtil getptbl $disk; { for i in `echo $offset`; do echo "Checking offset found at $i:"; hexdump -n4 -s $((0x100000+(512*$i))) $disk; hexdump -n4 -s $((0x1300000+(512*$i))) $disk; hexdump -C -n 128 -s $((0x130001d + (512*$i))) $disk; done; } | grep -B 1 -A 5 d00d; echo "---------------------"; done
 ```
 
