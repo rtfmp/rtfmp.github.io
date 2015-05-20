@@ -2,7 +2,7 @@
 title: ESXi partedUtil for when trouble strikes
 layout: post
 ---
-A VMware admin would never have to worry about using partedUtil to manipulate partition table on the CLI until trouble strikes.Starting VMFS5 (ESX 5.x and above), VMware switched to GUID Partition Table (gpt) from MBR partition(labled msdos) to support bigger extent that larger than 2TB. fdisk does not support gpt partition and hence partedUtil. 
+A VMware admin would never have to worry about using partedUtil to manipulate partition table on the CLI until trouble strikes.Starting VMFS5 (ESX 5.x and above), VMware switched to GUID Partition Table (gpt) from MBR partition(labeled msdos) to support bigger disk, larger than 2TB. fdisk does not support gpt partition and hence partedUtil. 
 
 partedUtil without any arguments will  display the options available and syntax.
 
@@ -33,7 +33,7 @@ This is  native VMFS5 partition
     20233 255 63 325058560
     1 2048 325058526 AA31E02A400F11DB9590000C2911D1B8 vmfs 0
 
-But this is a VMFS3 partition converted to VMFS5 still using MBR
+But this is a VMFS3 partition converted to VMFS5 still using MBR and starting at sector 128.
 
     ~ # partedUtil getptbl /vmfs/devices/disks/naa.6005076801810209f000000000000042
     msdos
@@ -48,7 +48,7 @@ And this is disk with no partition
     13054 255 63 209715200
 
 
-Lets create a partition. VMFS5 partition starts at sector. The end sector is calculated as (Cylinders * Heads * Sectors Per track) -1. Therefore  (13054*255*63) -1 = 209712509 is our end sector.
+Lets create a partition using `setptbl` option. VMFS5 partition starts at sector 2048. The end sector is calculated as (Cylinders * Heads * Sectors Per track) -1. Therefore  (13054*255*63) -1 = 209712509 is our end sector.
 
       ~ # partedUtil setptbl   /vmfs/devices/disks/mpx.vmhba1:C0:T1:L0 gpt "1 2048 209712509 AA31E02A400F11DB9590000C2911D1B8 0"
       gpt
@@ -93,7 +93,7 @@ Checking  our datatore is available
     ~ #
 
 
-Delete partition
+Delete partition we just created
 
     ~ # partedUtil delete /vmfs/devices/disks/mpx.vmhba1:C0:T1:L0 1
 
