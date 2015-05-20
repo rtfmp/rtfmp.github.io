@@ -93,7 +93,7 @@ Checking  our datatore is available
     ~ #
 
 
-Delete partition we just created
+Delete the partition we just created
 
     ~ # partedUtil delete /vmfs/devices/disks/mpx.vmhba1:C0:T1:L0 1
 
