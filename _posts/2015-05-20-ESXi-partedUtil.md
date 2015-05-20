@@ -41,7 +41,7 @@ But this is a VMFS3 partition converted to VMFS5 still using MBR and starting at
     1 128 1048562549 251 0
 
 
-And this is disk with no partition
+And this is a disk with no partition
 
     ~ # partedUtil getptbl /vmfs/devices/disks/mpx.vmhba1:C0:T1:L0
     unknown
