@@ -48,7 +48,7 @@ And this is a disk with no partition
     13054 255 63 209715200
 
 
-Lets create a partition using `setptbl` option. VMFS5 partition starts at sector 2048. The end sector is calculated as (Cylinders * Heads * Sectors Per track) -1. Therefore  (13054*255*63) -1 = 209712509 is our end sector.
+We can create partition using `setptbl` option. VMFS5 partition starts at sector 2048. The end sector is calculated as (Cylinders * Heads * Sectors Per track) -1. Therefore  (13054*255*63) -1 = 209712509 is our end sector.
 
       ~ # partedUtil setptbl   /vmfs/devices/disks/mpx.vmhba1:C0:T1:L0 gpt "1 2048 209712509 AA31E02A400F11DB9590000C2911D1B8 0"
       gpt
@@ -126,5 +126,3 @@ Recommended reading:
 * [Using the partedUtil command line utility on ESXi and ESX (1036609)](kb.vmware.com/kb/1036609)
 * [Using vmkfstools to Manage VMFS Datastores](http://buildvirtual.net/using-vmkfstools-to-manage-vmfs-datastores/)
 * [How to Format and Create VMFS5 Volume using the CLI in ESXi 5](http://buildvirtual.net/using-vmkfstools-to-manage-vmfs-datastores/) 
-
-
