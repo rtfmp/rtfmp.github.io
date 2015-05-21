@@ -4,14 +4,14 @@ title: ESXi portgroup missing and here's the proof
 ---
 The backup guys came over because a few Avamar Agent backup stopped working for a few virtual machines. Avamar Agent backup uses a dedicated network and hence the VMs have a second interface for the agent. We checked the interface is up with `ifconfig eth1` and  `ethtool eth1` shows it has a link. However, `tcpdump -i eth1` detects zero traffic. What are we missing?
 
-The interface for avamar in each VM is connected to portgroup- Backup-Network- which we find is no longer existing. If you look up the VM in vCenter, the portgroup would be greyed out.  We ssh to host and `esxcfg-vswitch -l` shows there's no such portgroup. The issue is resolved by creating the portgroup and connecting the VM to the portgroup. In vCenter
+The interface for avamar in each VM is connected to portgroup- Backup-Network- which we find is no longer existing. If you look up the VM in vCenter, the portgroup would be greyed out.  We ssh to the host and `esxcfg-vswitch -l` shows there's no such portgroup. The issue is resolved by creating the portgroup and reconnecting the VM to the portgroup. In vCenter
 
 - Right click on the VM
 - Edit Settings
 - Click on the Adapter, you will notice the portgroup is blank
 - Choose the portgroup
 
-This step is necessary. Recreating the portgroup alone is not enough for the VM to re-connect to what was existing portgroup. I think this could be due to internal reference VMware uses for a portgroup.
+This step is necessary. Recreating the portgroup alone is not enough for the VM to reconnect to what was existing portgroup. I think this could be due to internal reference VMware uses for a portgroup.
 
 What happened to the portgroup? Well, it was removed. Greping through hostd log, we found this
 
