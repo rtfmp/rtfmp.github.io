@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Check if a server is available on an UCS Manager using the CLI
+title: Locate a server using UCS Manager CLI
 comment: true
 ---
 I have the name of an UCS B series blade server that I need to configure. I need to locate the blade on an UCS Manager.
