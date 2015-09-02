@@ -12,6 +12,6 @@ From [Cisco Unified Computing System (UCS) (Data Center): A Complete Reference G
 
 From [UNIX and Linux System Administration Handbook 4th Edition](http://www.admin.com/)
 
-> grep was a private command of mine for quite a while before i made it public.”  
+> grep was a private command of mine for quite a while before i made it public.  
 
 [Ken Thomson](https://medium.com/@rualthanzauva/grep-was-a-private-command-of-mine-for-quite-a-while-before-i-made-it-public-ken-thompson-a40e24a5ef48)
