@@ -23,6 +23,6 @@ From the boot sequence, there's few seconds gaps between network and NAS mount r
     [13:12:44.964828] sysboot: nfs 72
     [13:12: .268838] sysboot: restore-nfs-volumes 89
 
-The fix is to use IP address instead of DNS name or add "esxcfg-nas -r" to /etc/rc.local.d/local.sh. VMware's [Best Practices for NAS] (http://www.vmware.com/resources/techresources/10096) does not have a preference of IP over DNS but does acknowledge the additional depency on DNS.
+The fix is to use IP address instead of DNS name or add "esxcfg-nas -r" to /etc/rc.local.d/local.sh. VMware's [Best Practices for NAS](http://www.vmware.com/resources/techresources/10096) does not have a preference of IP over DNS but does acknowledge the additional depency on DNS.
 
 It is possible you already have the NAS datastores mounted using DNS across the cluster. In which case changing it to IP would result in "(1)" being suffixed to the datastore name. This would result in vMotion failing etc.. Unless you can take all VMs down and re-register them, rescanning NAS on startup is an easier way out.
