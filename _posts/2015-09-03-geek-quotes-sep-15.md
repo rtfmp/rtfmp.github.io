@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Geek Quotes, Sep 15
+title: Geek Quotes: In 1989, they thought /etc was a typo
 comments: true
 ---
 
