@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Geek Quotes: Typing into a black screen
+title: Geek Quotes- Typing into a black screen
 comments: true
 published: false
 ---
