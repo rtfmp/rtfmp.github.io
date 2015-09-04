@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Configure hostname in RHEL 7
+title: Geek Quotes: Typing into a black screen
 comments: true
 published: false
 ---
