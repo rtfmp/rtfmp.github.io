@@ -1,7 +1,7 @@
 ---
 title: Geek Quotes: Typing into a black screen
 layout: post
-publish: false
+published: false
 ---
 
 "They may take our ifconfig, but they'll never take our vi!"
