@@ -3,7 +3,7 @@ layout: post
 title: No matter what I do, my server can't synchronize with NTP
 comments: yes
 ---
-So I have a server configured with  the correct NTP server. Correct? At least that is I what thought. But it will not sync   with the NTP server. I can ping the NTP server, I can connect  to it using nc to UDP port 123. I have restarted  ntpd a couple of times and it still won't work. What the hell is wrong?
+So I have a RHEL 6 server configured with  the correct NTP server. Correct? At least that is I what thought. But it will not sync   with the NTP server. I can ping the NTP server, I can connect  to it using nc to UDP port 123. I have restarted  ntpd a couple of times and it still won't work. What the hell is wrong?
 
 Ping ntp server? Yes.
 nc -vzu ntp.example.com 123? yes
