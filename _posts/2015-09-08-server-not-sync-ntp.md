@@ -80,4 +80,4 @@ I found a [Red Hat KB article](https://access.redhat.com/solutions/66485) which 
     4 Sep 01:08:53 ntpdate[23977]: adjust time server 192.168.1.50 offset 0.000521 sec
 
 
-The solution is to have the sever point to the right ntp server for the environment. 
+After talking to team managing NTP, the server is configured  with the wrong NTP server. After replacing it with the right NTP server, I am back in business.
