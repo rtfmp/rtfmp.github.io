@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RHCSA/RHCE RHEL7- Access a shell prompt and issue commands with correct syntax
+title: RHCE/RHEL 7- Access a shell prompt and issue commands with correct syntax
 comments: true
 ---
 
