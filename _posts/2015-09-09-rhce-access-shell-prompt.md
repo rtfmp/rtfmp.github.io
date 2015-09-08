@@ -4,7 +4,7 @@ title: RHCE/RHEL 7- Access a shell prompt and issue commands with correct syntax
 comments: true
 ---
 
-While preparing for RHCE RHEL 6 (available upto March 31, 2016), I came across [this website](https://oracle-base.com/articles/linux/rhcsa-and-rhce-6) which does an easy to follow  cheat sheet of sort for each topics under the RHCE/RHCSA Exam objectives. I was hugely impressed and wanted to do something similar. This is my attempt at replication the same for RHCE/RHCSA RHEL 7.
+While preparing for RHCE RHEL 6 (available upto March 31, 2016), I came across [this website](https://oracle-base.com/articles/linux/rhcsa-and-rhce-6) which does an easy to follow  cheat sheet of sort for each topics under the RHCE/RHCSA Exam objectives. I was hugely impressed and wanted to do something similar. This is my attempt at creating a guide for RHCE/RHCSA RHEL 7.
 
 Now to the topic. Anyone attempting RHCE should already know to launch a terminal to access the shell and run commands. If you are really that fresh to Linux, among the many many resources available online I recommend Daniel Robin's [Linux Fundamental series](http://www.funtoo.org/Category:Linux_Core_Concepts) and [Introduction to Linux](https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-2) by the Linux Foundation at EdX.
 
