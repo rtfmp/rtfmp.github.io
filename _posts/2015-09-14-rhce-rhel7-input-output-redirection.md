@@ -1,5 +1,5 @@
 ---
-title: Use input-output redirection (>, >>, |, 2>, etc.)
+title: Use input-output redirection 
 layout: post
 comments: yes
 publish: false
