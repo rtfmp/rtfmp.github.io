@@ -2,7 +2,7 @@
 title: Use input-output redirection 
 layout: post
 comments: yes
-publish: false
+published: false
 ---
 * Command < file  Get input from file
 * Command  file    Same as above
