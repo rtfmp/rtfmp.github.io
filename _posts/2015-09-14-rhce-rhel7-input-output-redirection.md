@@ -11,7 +11,7 @@ comments: yes
 	command 2>> file Sppends error to file
 	command > file 2>&1 Sends output and error to file
 	command >> file 2>>&1 Sppends output and error to file
-	command1 | command2 Output of command1 is piped into the input of command2
+	command1 | command2 Output of command1 becomes the input of command2
 	command | tee file Sends output to both file and screen
 	0,1,and 2 are the file descriptor for standard input, output and error respectively
 	
