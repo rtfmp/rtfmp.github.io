@@ -4,11 +4,5 @@ layout: post
 comments: yes
 published: false
 ---
-
-command < file
-
-Get input from file
-
-command file
-
-Same,get input from file
+command < file gets input from file
+command   file gets input from file
