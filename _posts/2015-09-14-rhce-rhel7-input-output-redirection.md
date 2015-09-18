@@ -18,4 +18,4 @@ comments: yes
 	
 When you run a command, input is expected from the standard input which is the keyboard. The output and error messages go the standard output which is the screen. Input can come from a file or other command. This is called input redirection.
 
-We can send the output to the a file instead of the screen. This is called output redirection. We can do the same with error. We use piping to send the output as input to another command.
+We can send the output to a file instead of the screen. This is called output redirection. We can do the same with error. We use piping to send the output of a command as input to another command.
