@@ -1,5 +1,5 @@
 ---
-title: Use input-output redirection 
+title: Input-output redirection 
 layout: post
 comments: yes
 ---
